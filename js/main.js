@@ -29,7 +29,7 @@
 
   // Software
   const sw = $("[data-software]");
-  if (sw) sw.innerHTML = (C.software || []).map(([n, lvl]) => `<div>${n}<span>${lvl}</span></div>`).join("");
+  if (sw) sw.innerHTML = (C.software || []).map(s => `<div>${Array.isArray(s) ? s[0] : s}</div>`).join("");
 
   // Grid de trabajos
   const grid = $("#works");
@@ -37,7 +37,8 @@
     grid.innerHTML = P.map(p => {
       const cover = `assets/proyectos/${p.slug}/${p.imagenes[0]}`;
       const chips = (p.tags || []).slice(0, 2).map(t => `<span class="chip">${t}</span>`).join("");
-      return `<a class="card" href="proyecto.html?p=${p.slug}">
+      const encuadre = p.encuadre ? ` style="--encuadre:${p.encuadre}"` : "";
+      return `<a class="card" href="proyecto.html?p=${p.slug}"${encuadre}>
         <img src="${cover}" alt="${p.name}" loading="lazy">
         <div class="card-meta"><h3>${p.name}</h3><div class="chips">${chips}</div></div>
       </a>`;

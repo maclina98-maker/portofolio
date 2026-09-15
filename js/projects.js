@@ -4,6 +4,8 @@
 // │  · Imágenes: en assets/proyectos/<slug>/. La 1ª es la PORTADA. │
 // │  · layout:"carrusel" + carrusel:N → las N primeras imágenes    │
 // │    van en un carrusel grande; el resto, en rejilla debajo.     │
+// │  · encuadre:"top" (o "bottom", "center 30%"…) → qué parte de   │
+// │    la portada se ve en la tarjeta cuadrada de la home.         │
 // └─────────────────────────────────────────────────────────────┘
 
 window.PROYECTOS = [
@@ -96,6 +98,7 @@ window.PROYECTOS = [
     "name": "Owel",
     "categoria": "Campaña",
     "subtitulo": "Campaña para zapatería",
+    "encuadre": "top",
     "tags": [
       "Campaña",
       "Social Media",
@@ -120,6 +123,7 @@ window.PROYECTOS = [
     "name": "Potser",
     "categoria": "Campaña",
     "subtitulo": "Campaña contra los TCA",
+    "encuadre": "top",
     "tags": [
       "Campaña social",
       "Dirección de arte"
@@ -145,6 +149,7 @@ window.PROYECTOS = [
     "name": "Carteles",
     "categoria": "Cartelería",
     "subtitulo": "Insólito · Massa temps fora de joc · Colmena",
+    "encuadre": "top",
     "tags": [
       "Cartelería",
       "Ilustración",

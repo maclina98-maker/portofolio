@@ -24,15 +24,8 @@ window.CONFIG = {
 
   skills: ["Branding","Dirección de arte","Packaging","Cartelería","Social media","Editorial","Tipografía","Web / Webflow"],
 
-  // Nivel visual del 1 al 5 (solo texto, cámbialo a tu gusto)
-  software: [
-    ["Illustrator","●●●●●"],
-    ["InDesign","●●●●●"],
-    ["Photoshop","●●●●○"],
-    ["Figma","●●●●○"],
-    ["CorelDraw","●●●●○"],
-    ["Premiere","●●○○○"],
-  ],
+  // Programas que usas, en el orden en que quieres que salgan
+  software: ["Illustrator","InDesign","Photoshop","Figma","CorelDraw","Premiere"],
 
   cta: {
     titulo: "¿Damos vida a tu próxima idea?",

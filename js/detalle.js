@@ -27,6 +27,15 @@
   // Galería
   const imgs = proj.imagenes.map(f => `assets/proyectos/${proj.slug}/${f}`);
   const gal = $("#gallery");
+  const shot = (src, alt, i) =>
+    `<figure class="shot"><img src="${src}" alt="${alt}" loading="lazy" data-i="${i}"></figure>`;
+
+  // Navegación anterior / siguiente (vale para cualquier layout)
+  const prev = P[(idx - 1 + P.length) % P.length];
+  const next = P[(idx + 1) % P.length];
+  const pa = $("#prev"), na = $("#next");
+  pa.href = `proyecto.html?p=${prev.slug}`; pa.querySelector(".big").textContent = prev.name;
+  na.href = `proyecto.html?p=${next.slug}`; na.querySelector(".big").textContent = next.name;
 
   if (proj.layout === "carrusel") {
     // ----- Carrusel grande (primeras N imágenes) + resto en rejilla -----
@@ -43,7 +52,7 @@
       </div>
       <div class="car-dots">${carImgs.map((_, i) => `<button class="${i === 0 ? "on" : ""}" data-d="${i}" aria-label="Ir a ${i + 1}"></button>`).join("")}</div>
       ${restImgs.length ? `<div class="gallery car-extra">${restImgs.map((src, i) =>
-        `<img src="${src}" alt="${proj.name} extra ${i + 1}" loading="lazy" data-i="${n + i}">`).join("")}</div>` : ""}`;
+        shot(src, `${proj.name} extra ${i + 1}`, n + i)).join("")}</div>` : ""}`;
 
     // lightbox para las imágenes de abajo
     if (restImgs.length) {
@@ -88,15 +97,7 @@
   }
 
   // ----- Galería masonry (por defecto) -----
-  gal.innerHTML = imgs.map((src, i) =>
-    `<img src="${src}" alt="${proj.name} ${i + 1}" loading="lazy" data-i="${i}">`).join("");
-
-  // Navegación anterior / siguiente
-  const prev = P[(idx - 1 + P.length) % P.length];
-  const next = P[(idx + 1) % P.length];
-  const pa = $("#prev"), na = $("#next");
-  pa.href = `proyecto.html?p=${prev.slug}`; pa.querySelector(".big").textContent = prev.name;
-  na.href = `proyecto.html?p=${next.slug}`; na.querySelector(".big").textContent = next.name;
+  gal.innerHTML = imgs.map((src, i) => shot(src, `${proj.name} ${i + 1}`, i)).join("");
 
   // Lightbox
   const lb = $("#lb"), lbImg = $("#lbImg");
