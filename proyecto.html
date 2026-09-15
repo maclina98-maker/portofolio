@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto · Laura Maclina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" data-brand>Laura Maclina</a>
+      <nav class="nav-links" id="menu">
+        <a href="index.html#trabajos">Trabajos</a>
+        <a href="index.html#sobre">Sobre mí</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <a class="btn" data-email href="#">Hablemos</a>
+      <button class="nav-toggle" aria-label="Menú" onclick="document.getElementById('menu').classList.toggle('show')">☰</button>
+    </div>
+  </header>
+
+  <div class="wrap proj-hero">
+    <a class="back" href="index.html#trabajos">← Volver a trabajos</a>
+    <div class="proj-head">
+      <div>
+        <p class="proj-cat" data-cat></p>
+        <h1 class="proj-title" data-title></h1>
+        <p class="proj-sub" data-sub></p>
+      </div>
+      <div class="proj-desc" id="desc"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="gallery" id="gallery"></div>
+    <nav class="proj-nav">
+      <a id="prev">← <span class="big"></span></a>
+      <a id="next" style="text-align:right">→ <span class="big"></span></a>
+    </nav>
+  </div>
+
+  <div class="wrap" style="padding-bottom:40px">
+    <div class="cta">
+      <h2 data-cta-title></h2>
+      <p data-cta-sub></p>
+      <a class="btn" data-email href="#">Escríbeme</a>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Siguiente">›</button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/detalle.js"></script>
+</body>
+</html>
