@@ -47,6 +47,9 @@ Solo tocas **`js/config.js`**, **`js/projects.js`** y las carpetas de **`assets/
 }
 ```
 
+> Opcional: si en la tarjeta de la home la portada sale mal recortada, añade
+> `"encuadre": "top"` (o `"bottom"`, `"center 30%"`…) para elegir qué parte se ve.
+
 > `slug` tiene que ser **igual** al nombre de la carpeta. Ojo con las comas
 > entre bloques: cada `}` lleva una coma detrás menos el último.
 
